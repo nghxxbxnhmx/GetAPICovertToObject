@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Contract {
+public class ContractModel {
     @JsonProperty("ObjID")
     int objID;
 

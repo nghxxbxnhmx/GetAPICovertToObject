@@ -1,13 +1,13 @@
-package com.ok_http.apiresponse;
+package com.ok_http.dto;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.ok_http.models.MacContract;
+import com.ok_http.models.MacContractModel;
 
 import lombok.Data;
 
 @Data
-public class MacResponse {
+public class MacDTO {
     @JsonProperty("Status")
     String status;
 
@@ -21,7 +21,7 @@ public class MacResponse {
     int description;
 
     @JsonProperty("Data")
-    List<MacContract> macContract;
+    List<MacContractModel> macContract;
     
     @JsonProperty("FunctionInfo")
     String functionInfo;
