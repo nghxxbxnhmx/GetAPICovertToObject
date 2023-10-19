@@ -5,15 +5,17 @@ import java.io.IOException;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ok_http.models.ContractResponse;
+import com.ok_http.models.MacResponse;
 
 import okhttp3.*;
 
 @Service
-public class GetAPIService {
-    public static final String API_URL = "http://systemradiusapi.fpt.vn/api/Mo/GetContractInfoByMac";
+public class GetAPIService {    
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
-    public String getObjectFromResponse() throws IOException {
+    public String getContractFromMac() throws IOException {
+        String API_URL = "http://systemradiusapi.fpt.vn/api/Mo/GetContractInfoByMac";
+        String selfPath = "http://localhost:8080/getFromMac";
         ObjectMapper objectMapper = new ObjectMapper();
         ContractResponse responseObject = new ContractResponse();
 
@@ -22,9 +24,9 @@ public class GetAPIService {
                 .build();
 
         Request request = new Request.Builder()
+                // .url(selfPath)
                 .url(API_URL)
                 .header("Content-Type", "application/json")
-                // .post(formBody)
                 .post(formBody)
                 .build();
 
@@ -43,4 +45,35 @@ public class GetAPIService {
         }
     }
     
+    public String getMacFromContract() throws IOException {
+        String API_URL = "http://systemradiusapi.fpt.vn/api/Mo/GetMacByContract_ObjID";
+        String selfPath = "http://localhost:8080/getFromContract";
+        ObjectMapper objectMapper = new ObjectMapper();
+        MacResponse macResponse = new MacResponse();
+
+        RequestBody formBody = new FormBody.Builder()
+                .add("contract", "SGFDN0092")
+                .build();
+
+        Request request = new Request.Builder()
+                // .url(selfPath)
+                .url(API_URL)
+                .header("Content-Type", "application/json")
+                .post(formBody)
+                .build();
+
+        try (Response response = new OkHttpClient().newCall(request).execute()) {
+            if (!response.isSuccessful()) {
+                throw new IOException("Unexpected code: " + response);
+            }
+            String responseJsonString = response.body().string();
+            macResponse = objectMapper.readValue(responseJsonString, MacResponse.class);
+            
+            return macResponse.toJson();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
