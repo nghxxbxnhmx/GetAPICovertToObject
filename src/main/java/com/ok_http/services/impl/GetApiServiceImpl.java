@@ -9,8 +9,6 @@ import com.ok_http.dto.MacDTO;
 import com.ok_http.services.GetApiService;
 import com.ok_http.utils.OkHttpUtil;
 
-import okhttp3.*;
-
 @Service
 public class GetApiServiceImpl implements GetApiService {
     @Autowired
@@ -21,11 +19,11 @@ public class GetApiServiceImpl implements GetApiService {
     @Override
     public ContractDTO getContractFromMac() {
         String apiUrl = "http://systemradiusapi.fpt.vn/api/Mo/GetContractInfoByMac";
-        RequestBody formBody = new FormBody.Builder()
-                .add("MacAddress", "a4:81:7a:b1:05:92")
-                .build();
+        String requestBody = "{\r\n" + //
+                "    \"MacAddress\":\"a4:81:7a:b1:05:92\"\r\n" + //
+                "}";
         try {
-            return objectMapper.readValue(okHttpUtil.postRequest(apiUrl, formBody), ContractDTO.class);
+            return objectMapper.readValue(okHttpUtil.postRequest(apiUrl, requestBody), ContractDTO.class);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -36,11 +34,11 @@ public class GetApiServiceImpl implements GetApiService {
     @Override
     public MacDTO getMacFromContract() {
         String apiUrl = "http://systemradiusapi.fpt.vn/api/Mo/GetMacByContract_ObjID";
-        RequestBody formBody = new FormBody.Builder()
-                .add("contract", "SGFDN0092")
-                .build();
+        String requestBody = "{\r\n" + //
+                "    \"contract\":\"SGFDN0092\"\r\n" + //
+                "}";
         try {
-            return objectMapper.readValue(okHttpUtil.postRequest(apiUrl, formBody), MacDTO.class);
+            return objectMapper.readValue(okHttpUtil.postRequest(apiUrl, requestBody), MacDTO.class);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
