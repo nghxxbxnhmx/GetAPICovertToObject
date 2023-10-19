@@ -1,25 +1,26 @@
 package com.ok_http.controlles;
 
-import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ok_http.services.GetAPIService;
+import com.ok_http.apiresponse.ContractResponse;
+import com.ok_http.apiresponse.MacResponse;
+import com.ok_http.services.GetApiService;
 
 @RestController
 public class GetResponseFromAPIController {
-    @Autowired GetAPIService apiService;
-
+    @Autowired
+    GetApiService apiService;
 
     @PostMapping("/GetContractInfoByMac")
-    public String GetContractInfoByMac() throws IOException {
+    public ResponseEntity<ContractResponse> getContractInfoByMac() {
         return apiService.getContractFromMac();
     }
 
     @PostMapping("/GetMacByContract_ObjID")
-    public String GetMacFromContract() throws IOException {
+    public ResponseEntity<MacResponse> getMacFromContract() {
         return apiService.getMacFromContract();
     }
 }

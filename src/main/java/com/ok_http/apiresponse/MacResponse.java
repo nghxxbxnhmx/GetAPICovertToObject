@@ -1,9 +1,12 @@
-package com.ok_http.models;
+package com.ok_http.apiresponse;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ok_http.models.MacContract;
 
+import lombok.Data;
+
+@Data
 public class MacResponse {
     @JsonProperty("Status")
     String status;
@@ -18,18 +21,8 @@ public class MacResponse {
     int description;
 
     @JsonProperty("Data")
-    List<Mac_Contract> Mac_Contract;
+    List<MacContract> macContract;
     
     @JsonProperty("FunctionInfo")
     String functionInfo;
-
-    public String toJson() {
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            return objectMapper.writeValueAsString(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 }

@@ -4,17 +4,10 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Contract {
     @JsonProperty("ObjID")
@@ -78,10 +71,10 @@ public class Contract {
     int branchCode;
 
     @JsonProperty("Suspend_Date")
-    Date suspend_Date;
+    Date suspendDate;
 
     @JsonProperty("Suspend_Reason")
-    String suspend_Reason;
+    String suspendReason;
 
     @JsonProperty("ObjAddress")
     String objAddress;
@@ -97,46 +90,4 @@ public class Contract {
 
     @JsonProperty("FeeLocalType")
     String feeLocalType;
-
-    @Override
-    public String toString() {
-        return "Contract{" +
-                "objID=" + objID +
-                ", contractNum='" + contractNum + '\'' +
-                ", contractDate='" + contractDate + '\'' +
-                ", customerName='" + customerName + '\'' +
-                ", passport='" + passport + '\'' +
-                ", companyName='" + companyName + '\'' +
-                ", certificateNumber='" + certificateNumber + '\'' +
-                ", address='" + address + '\'' +
-                ", billTo='" + billTo + '\'' +
-                ", contractType=" + contractType +
-                ", contractTypeName='" + contractTypeName + '\'' +
-                ", contractStatus=" + contractStatus +
-                ", contractStatusName='" + contractStatusName + '\'' +
-                ", loginName='" + loginName + '\'' +
-                ", email='" + email + '\'' +
-                ", location='" + location + '\'' +
-                ", region='" + region + '\'' +
-                ", locationID=" + locationID +
-                ", userName='" + userName + '\'' +
-                ", branchCode=" + branchCode +
-                ", suspend_Date='" + suspend_Date + '\'' +
-                ", suspend_Reason='" + suspend_Reason + '\'' +
-                ", objAddress='" + objAddress + '\'' +
-                ", legalEntityName='" + legalEntityName + '\'' +
-                ", partnerName='" + partnerName + '\'' +
-                ", eocName='" + eocName + '\'' +
-                ", feeLocalType='" + feeLocalType + '\'' +
-                '}';
-    }
-    public String toJson() {
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            return objectMapper.writeValueAsString(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 }
