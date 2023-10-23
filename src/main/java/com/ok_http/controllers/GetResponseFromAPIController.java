@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ok_http.dto.AllInfoToCpeDTO;
 import com.ok_http.dto.ContractDTO;
 import com.ok_http.dto.MacDTO;
 import com.ok_http.services.GetApiService;
@@ -23,4 +24,8 @@ public class GetResponseFromAPIController {
     public ResponseEntity<MacDTO> getMacFromContract() {
         return ResponseEntity.ok(apiService.getMacFromContract());
     }
+    @PostMapping("/getAllInfoToCPE")
+    public ResponseEntity<AllInfoToCpeDTO> getAllInfoToCPE() {
+        return ResponseEntity.ok(apiService.getAllInfoToCPE());
+    }   
 }
