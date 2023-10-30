@@ -1,0 +1,6428 @@
+{
+  "chartId": "64d444034ace653e8fd65f12",
+  "data": [
+    {
+      "id": "node-35213965-68f2-4271-b9b2-3fb0b4e366af",
+      "type": "Start",
+      "serviceName": null,
+      "serviceAlias": null,
+      "descriptions": null,
+      "comparison_properties": [
+        {
+          "next": "node-00ebe605-f7d7-42c6-82c3-a41daa462ed7",
+          "properties": [],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": []
+    },
+    {
+      "id": "node-9292dd7e-d115-4030-849d-43422627da03",
+      "type": "user-task",
+      "serviceName": "Cấu hình giới hạn/ chặn thiết bị kết nối",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn Khách Hàng truy cập thiết bị tìm từ khóa MAC filtering hoặc Parental control để cấu hình bỏ chặn.\n"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-2e01fd50-67fe-4b9d-9c04-0e557b3e4427",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-382c472b-34e7-4c7f-9427-915a30f3ab46",
+      "type": "user-task",
+      "serviceName": "Kiểm tra dây LAN từ AP đến thiết bị KH",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Kiểm tra cắm đúng cổng LAN trên AP. Rút cắm lại dây Lan.\n2. Kiểm tra dây LAN, đầu RJ45 có bị đứt, hỏng, bấm sai chuẩn, bấm lại dây LAN đảm bảo đúng chuẩn 8 sợi hoạt động."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-3eacad15-8080-422a-a8f4-c149449381a9",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-04b8ffb4-7168-451e-a090-d95a7be192f6",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-a0674226-0ae7-4c65-ba10-406605367c85",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-d22189c9-6452-4ada-87d3-e240406ecbfd",
+      "type": "user-task",
+      "serviceName": "NAT session OK?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-cb9825db-1242-40d3-aba2-6588c09f016d",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-b92d0774-ab54-4d38-98d9-c852a7874a17",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-62681b7e-0ca7-4ec6-bbf8-9ee508369f62",
+      "type": "user-task",
+      "serviceName": "Thay cáp Lastmile / FC",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-ec9de84a-6e2e-42a9-ac10-39ac80037b84",
+      "type": "user-task",
+      "serviceName": "Thay dây LAN",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-febf14eb-ffe1-414a-a5a2-d7d207329adb",
+      "type": "user-task",
+      "serviceName": "Cấu hình chặn dịch vụ trên AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Cấu hình tắt tính năng chặn dịch vụ"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-da26f5a7-9ccb-4721-a21d-e75707ed7048",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-af06558b-57b1-41a5-9e30-cf7e6b225ea1",
+      "type": "user-task",
+      "serviceName": "Cấu hình DHCP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Kiểm tra cấu hình DHCP của Khách Hàng, khuyến nghị cấu hình lại DHCP qua tool SO."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-229e1f2f-87bf-4d3b-9f4a-a532e9b840e2",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-d82c01c2-3ea1-46e8-8d86-dbed4e3b9e83",
+      "type": "user-task",
+      "serviceName": "Dây LAN bình thường?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-61eade1f-2420-4860-927b-d5499631f779",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-4b782ff5-b794-47c9-a97f-128966e0fcba",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-21c6537a-8d24-4748-a9c4-992af5e1ea64",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-3206632b-6ec1-465a-b396-150cb15fd60f",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-2cbc8389-acba-4abf-9afa-423753925846",
+      "type": "user-task",
+      "serviceName": "Cấu hình bật wifi AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Truy cập vào Gateway AP làm theo hướng dẫn từng dòng thiết bị :\n1. Cấu hình bật Wifi."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-8b2fe447-3d81-4707-9f34-bc00766d9f46",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-55577681-00e9-4370-8f51-39599fb605da",
+      "type": "user-task",
+      "serviceName": "Dây LAN bình thường?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-60485e47-1fb5-418a-ad33-50897bf6d993",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-ec9de84a-6e2e-42a9-ac10-39ac80037b84",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-58d6f8af-cc50-4443-85de-9783a7cbbb47",
+      "type": "user-task",
+      "serviceName": "Kiểm tra chất lượng wifi",
+      "serviceAlias": "question",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Thực hiện lệnh Ping (Wifi) 20 gói đến Modem.\n2. Thực hiện lệnh Ping (Wifi) 20 gói đến DNS FPT.\n\nChất lượng wifi tốt (Ping <10ms, packetloss < 10%) ?"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-58583cc7-0631-42e2-b3f7-93cccb9c6108",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-fb63b784-f604-4cd6-bd7d-b747c5321bf6",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-5f2d0820-a33e-4c30-9460-902dda4d8e5e",
+      "type": "user-task",
+      "serviceName": "Kiểm tra nguồn, adapter ONU",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Rút cắm lại Adapter ở ổ cắm\n2. Kiểm tra lại nguồn điện đầu vào, đổi ổ cắm điện khác.\n3. Kiểm tra adapter đang cắm vào ONU và cắm lại adapter đúng loại đi kèm: G-97CM & G-97C1: 12V - 0.5A ; Tplink XZ000-G3: 9V - 0.6A.\n4. Di dời vị trí ONT để tản nhiệt."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-ac314872-a03b-47a8-bd81-670b0e3c33a0",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-cb9825db-1242-40d3-aba2-6588c09f016d",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-fb63b784-f604-4cd6-bd7d-b747c5321bf6",
+      "type": "user-task",
+      "serviceName": "Di chuyển vị trí AP Mesh",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tín hiệu wifi kém/ nhiễu. Tư vấn khách hàng các phương án:\n- Di chuyển vị trí AP Mesh đến vị trí tín hiệu wifi tốt.\n- Kết nối dây LAN cho AP để sử dụng ổn định.\n\nTạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-3eacad15-8080-422a-a8f4-c149449381a9",
+      "type": "user-task",
+      "serviceName": "Dây LAN bình thường?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-ba7b4d47-fa1c-4c40-b787-7e08f3725012",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-17a503de-22b4-49ed-9feb-818d13f7fc73",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-565dd991-a039-431c-ac0a-6cd69f626a9b",
+      "type": "user-task",
+      "serviceName": "Các dịch đã sử dụng bình thường",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-098f4759-4a29-414d-bcc1-99361f4c0f70",
+      "type": "user-task",
+      "serviceName": "Kiểm tra nguồn, adapter ONT",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Rút cắm lại Adapter ở ổ cắm\n2. Kiểm tra lại nguồn điện đầu vào, đổi ổ cắm điện khác\n3. Kiểm tra adapter đang cắm vào Modem và cắm lại adapter đúng loại đi kèm: 12v-1A(1.5A)\n4. Di dời vị trí ONT để tản nhiệt."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-b57979c5-42a2-4d2a-814e-eb105f6473ef",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-76faf2cd-9289-478c-8ab6-db33282ed5d8",
+      "type": "user-task",
+      "serviceName": "Cấu hình chặn dịch vụ",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn Khách Hàng truy cập thiết bị tìm tắt tính năng chặn dịch vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-3374807f-aac5-482e-876c-4ded7bb2b7da",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-9a724eae-5e67-4be7-a039-9108b714ccd5",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-3d2316d4-a274-4131-8508-eab461dd578f",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-d234c369-3709-4434-a4e5-b7389edf8113",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-40563eb6-4c08-4f09-86e0-22afa3ee01d6",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-bfe585d5-4d31-4e3d-b157-babf30dfd341",
+      "type": "user-task",
+      "serviceName": "Reboot AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Hướng dẫn KH rút cắm lại nguồn AP hoặc tắt bật nút nguồn trên thân thiết bị.\n2. Kiểm tra adapter đang cắm vào AP và cắm lại adapter đúng loại đi kèm."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-96bd94e2-781e-4bac-8261-a0d67524dd54",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-2e01fd50-67fe-4b9d-9c04-0e557b3e4427",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-f7a7a9fd-7e8f-4811-8507-9ac2b77c266e",
+      "type": "user-task",
+      "serviceName": "Cấu hình DNS AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "DNS có thể không phân giải được dịch vụ của Khách Hàng, khuyến nghị hướng dẫn Khách Hàng cấu hình lại DNS FPT"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c43960bf-82e8-437b-a283-3f2b51d51b02",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-bc527d2f-4ca7-4850-bfc4-b5d458c6a927",
+      "type": "user-task",
+      "serviceName": "Thiết bị KH lỗi cổng lan, card wifi, hoặc bị disable ",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Hướng dẫn KH kiểm tra enable cổng LAN,WIFi\n2. Hướng dẫn KH kiểm tra cài lại driver\n3. Hướng dẫn KH dùng thiết bị khác để kiểm tra"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-9b237f81-fcab-448e-9504-f69d5cd5f0d4",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-e7f39d0e-7d93-467d-bb28-51f0f5eaf9b8",
+      "type": "user-task",
+      "serviceName": "Router sáng đèn bình thường?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-feeb137f-c7fa-4499-91fd-f70d78341b8b",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-7ae82f94-b0e7-4cc4-8bec-f51d3259f8ee",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-2960a475-86ee-4027-b6a7-d5a84f8bcfd3",
+      "type": "user-task",
+      "serviceName": "Cấu hình IP,DHCP AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Cấu hình DHCP theo đúng mode của AP: \nBridge WAN, LAN-LAN: tắt DHCP\nLAN-WAN: bật DHCP\n2. Cấu hình đúng range IP, không trùng IP với Gateway."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-7d134e0b-e76a-4bc3-a0ea-afe0288d5468",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-c491129c-1198-4f9a-9640-1e2ecfad6715",
+      "type": "user-task",
+      "serviceName": "Cấu hình PPPoE",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Cấu hình lại username, password pppoe."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-d234c369-3709-4434-a4e5-b7389edf8113",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-f6ecb3f2-1948-4f11-88db-cacc40318683",
+      "type": "user-task",
+      "serviceName": "Thay cáp Lastmile / FC",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo Checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-cb1e6cf4-9acf-4f35-9df2-617f94aeb7d2",
+      "type": "user-task",
+      "serviceName": "Reset MAC",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Thưc hiện reset MAC trên inside."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-bc36ab01-69dd-40e6-9150-f4d78b83f773",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+      "type": "End",
+      "serviceName": null,
+      "serviceAlias": null,
+      "descriptions": null,
+      "comparison_properties": [],
+      "input_properties": []
+    },
+    {
+      "id": "node-c9cd3a7b-a6cd-4901-a9f6-a0879e9b3365",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-bc527d2f-4ca7-4850-bfc4-b5d458c6a927",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-85cf9b44-63a7-47e9-89f5-1723153305f7",
+      "type": "user-task",
+      "serviceName": "Di chuyển vị trí Modem",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tín hiệu wifi kém/ nhiễu. Tư vấn khách hàng các phương án:\n- Di chuyển vị trí Modem đến vị trí KH thường sử dụng.\n- Lắp thêm AP ở vị trí sóng kém để mở rộng vùng phủ wifi.\n\nTạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-fa76f78f-6109-4e1e-aec8-2f7076587464",
+      "type": "user-task",
+      "serviceName": "Kiểm tra công suất thu",
+      "serviceAlias": "question",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Công suất thu Wifi đạt từ -65dBm đến -10dBm không?"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-fb63b784-f604-4cd6-bd7d-b747c5321bf6",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-58d6f8af-cc50-4443-85de-9783a7cbbb47",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-abc1b06f-dd2c-448f-b9bb-ab6c7ffeeb89",
+      "type": "user-task",
+      "serviceName": "Thay Adapter/ Thay ONU/ONT",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-68dcb871-5cf2-4936-b1bc-b1b65a94f8cc",
+      "type": "user-task",
+      "serviceName": "Kiểm tra dây LAN từ Modem - AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Kiểm tra cắm đúng cổng LAN trên Modem/Router và cổng WAN trên AP. Rút cắm lại dây Lan.\n2. Kiểm tra dây LAN, đầu RJ45 có bị đứt, hỏng, bấm sai chuẩn, bấm lại dây LAN đảm bảo đúng chuẩn 8 sợi hoạt động."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-d82c01c2-3ea1-46e8-8d86-dbed4e3b9e83",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-604b24c3-e044-4a94-8f4b-b3f8307b9368",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-d253f045-c582-4a6f-b627-9c8f3be6901c",
+      "type": "user-task",
+      "serviceName": "Cấu hình giới hạn/ chặn thiết bị kết nối trên AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn Khách Hàng truy cập thiết bị tìm từ khóa MAC filtering hoặc Parental control để cấu hình bỏ chặn."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-21c6537a-8d24-4748-a9c4-992af5e1ea64",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-31ad3a33-3e34-4497-918b-29e2aa1104d1",
+      "type": "user-task",
+      "serviceName": "Khách hàng đồng ý tiếp tục phục vụ ?",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Trường hợp KH không kiểm tra tiếp chọn No và thông báo KH để tạo checklist TIN/PNC phục vụ.\n2. Trường hợp KH đồng ý tiếp tục hướng dẫn khắc phục lỗi chọn Yes."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-bc36ab01-69dd-40e6-9150-f4d78b83f773",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-f5719558-0ca2-406e-a263-5ca51e1337d1",
+      "type": "user-task",
+      "serviceName": "Kiểm tra dây LAN từ Modem đến thiết bị KH",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Kiểm tra cắm đúng cổng LAN trên Modem/Router. Rút cắm lại dây Lan.\n2. Kiểm tra dây LAN, đầu RJ45 có bị đứt, hỏng, bấm sai chuẩn, bấm lại dây LAN đảm bảo đúng chuẩn 8 sợi hoạt động."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-1e3fa0fd-9992-4221-9d5f-612ed54dee83",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-0777181d-7d7f-4915-85fd-6464237e2697",
+      "type": "user-task",
+      "serviceName": "Kiểm tra cổng LAN AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Kiểm tra đèn cổng Lan, rút Lan cắm lại.\n2. Đổi sang cắm cổng Lan khác."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-40563eb6-4c08-4f09-86e0-22afa3ee01d6",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-7c8af06d-f028-4354-806e-57304e3ab65a",
+      "type": "user-task",
+      "serviceName": "Kiểm tra công suất thu Wifi",
+      "serviceAlias": "question",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Công suất thu Wifi đạt từ -65dBm đến -10dBm không?"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-85cf9b44-63a7-47e9-89f5-1723153305f7",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-d66c93ea-4e44-421e-9a32-cf246ee5a6b5",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-d66c93ea-4e44-421e-9a32-cf246ee5a6b5",
+      "type": "user-task",
+      "serviceName": "Kiểm tra chất lượng wifi",
+      "serviceAlias": "question",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Thực hiện lệnh Ping (Wifi) 20 gói đến Modem.\n2. Thực hiện lệnh Ping (Wifi) 20 gói đến DNS FPT.\n\nChất lượng wifi tốt (Ping <10ms, packetloss < 10%) ?"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-85cf9b44-63a7-47e9-89f5-1723153305f7",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-8c1b9b3f-c565-4c34-9192-a2fa52beeb4c",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-61eade1f-2420-4860-927b-d5499631f779",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-90a9bdf8-12c3-41b0-9d15-7287c0682322",
+      "type": "user-task",
+      "serviceName": "Kiểm tra Nguồn ONU/ONT",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Kiểm tra ONU/ONT đã bật nguồn chưa\n2. Rút cắm lại Adapter ở ổ cắm\n3. Kiểm tra lại nguồn điện đầu vào, đổi ổ cắm điện khác.\n4. Kiểm tra adapter đang cắm vào ONU/ONT và cắm lại adapter đúng loại đi kèm.\nONT: 12V-1.5A(1A)\nONU: G-97CM & G-97C1: 12V - 0.5A ; Tplink XZ000-G3: 9V - 0.6A"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-17eb90e3-6bd2-48a5-9753-0742854b706b",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-658b8c9f-d9c3-43e8-a7fa-bcc30415f56b",
+      "type": "user-task",
+      "serviceName": "Tín hiệu đã bình thường ?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-3364ee8e-56b6-4297-b457-d8d843fded42",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-565dd991-a039-431c-ac0a-6cd69f626a9b",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-405fd3be-533d-4b04-96db-18fde06e1495",
+      "type": "user-task",
+      "serviceName": "Tín hiệu đã bình thường",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-565dd991-a039-431c-ac0a-6cd69f626a9b",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-f6ecb3f2-1948-4f11-88db-cacc40318683",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-dd08f1b7-a91d-4e83-b700-33567334a12a",
+      "type": "user-task",
+      "serviceName": "Kiểm tra wifi từ Modem đến AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn Khách Hàng sử dụng Wifiman để đo công suất thu tại vị trí lắp đặt của AP Mesh."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-fa76f78f-6109-4e1e-aec8-2f7076587464",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-d82665bc-e77b-468a-906f-6ea538cb36da",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-13d47c33-54a7-4bca-869a-c94c7396726f",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-018afb8d-53eb-4476-adf3-d70244790fed",
+      "type": "user-task",
+      "serviceName": "Thay thiết bị",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-58f999f5-c820-4418-b9de-a680572c2084",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-4b782ff5-b794-47c9-a97f-128966e0fcba",
+      "type": "user-task",
+      "serviceName": "Thay dây LAN",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-7d134e0b-e76a-4bc3-a0ea-afe0288d5468",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-c1d788e7-26d1-422b-aa71-1ecbf266535f",
+      "type": "user-task",
+      "serviceName": "Cấu hình tối ưu kênh sóng wifi AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Kênh sóng Wifi chưa tối ưu bạn cần đăng nhập AP cấu hình  kênh sóng Wifi về chế độ Auto."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-38a089ae-f0e5-46f2-84e0-4fc53b95654d",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-915af002-4075-4113-8c0b-4ce2af7e447b",
+      "type": "user-task",
+      "serviceName": "Tín hiệu đã bình thường ?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-604b24c3-e044-4a94-8f4b-b3f8307b9368",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-acecc453-87ec-4fc7-a4ca-d5f0c50527ee",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-58583cc7-0631-42e2-b3f7-93cccb9c6108",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-b4803922-4274-48bc-9056-e1322c60fe8c",
+      "type": "user-task",
+      "serviceName": "Kiểm tra nguồn điện AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Rút cắm lại nguồn AP.\n2. Kiểm tra nguồn đúng chuẩn theo thông số của AP.\n3. Đổi ổ cắm khác.\n4. Bật nguồn thiết bị."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-498fc571-6a82-475f-b8c7-cd2d08d6b3f2",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-129e3958-04df-4a72-b78d-cae60c0e7548",
+      "type": "user-task",
+      "serviceName": "Cấu hình bật/hiện Wifi",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Khuyến nghị hướng dẫn Khách Hàng cấu hình:\n1. Bật Wifi 2.4GHz/Wifi 5GHz\n2. Hiện SSID1 Wifi 2.4GHz/Wifi 5GHz"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-04b8ffb4-7168-451e-a090-d95a7be192f6",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-7ae82f94-b0e7-4cc4-8bec-f51d3259f8ee",
+      "type": "user-task",
+      "serviceName": "Thay Router",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-baad3b4c-6470-43ce-8acb-a9169d4b9067",
+      "type": "user-task",
+      "serviceName": "Kiểm tra Cáp Lastmile",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn KH kiểm tra cáp Lastmile có bị gập xoắn, đứt không?\nHướng dẫn KH xử lý nếu cáp bị gập xoắn."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-915af002-4075-4113-8c0b-4ce2af7e447b",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-17a503de-22b4-49ed-9feb-818d13f7fc73",
+      "type": "user-task",
+      "serviceName": "Thay dây LAN",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-6ed0aafc-7df2-4eb7-ad30-8962a80765af",
+      "type": "user-task",
+      "serviceName": "Kiểm tra cáp lastmile",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn KH kiểm tra cáp Lastmile có bị gập xoắn, đứt không?\nHướng dẫn KH xử lý nếu cáp bị gập xoắn."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-658b8c9f-d9c3-43e8-a7fa-bcc30415f56b",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-e525ce6b-0baf-41bc-a4c4-075d23f75689",
+      "type": "user-task",
+      "serviceName": "Kiểm tra cổng LAN Modem/Router",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Kiểm tra đèn cổng Lan, rút Lan cắm lại.\n2. Đổi sang cắm cổng Lan khác."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-6739f6a2-1280-4c61-b60b-1b1f9cb90ecb",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-6739f6a2-1280-4c61-b60b-1b1f9cb90ecb",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-d84a2902-87f3-4033-bf04-9623b8ca88b6",
+      "type": "user-task",
+      "serviceName": "Cấu hình Nat/Enable Wan",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn Khách Hàng truy cập trang chủ thiết bị và cấu hình mở lại NAT/Wan."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-5a2fbc94-f9aa-4f3b-a9cc-5080a89cc519",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-9b237f81-fcab-448e-9504-f69d5cd5f0d4",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-ba7b4d47-fa1c-4c40-b787-7e08f3725012",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-0d1ce3b0-e5a7-40c6-bc4b-c529db332694",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c95694b1-160a-4bdd-b28b-0c260441b980",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-57227259-d40b-4b89-aa89-d4857de8cdd3",
+      "type": "user-task",
+      "serviceName": "Kiểm tra Wifi từ Modem đến thiết bị KH",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn Khách Hàng sử dụng Wifiman để đo công suất thu wifi tại vị trí Khách Hàng sử dụng.\n"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-7c8af06d-f028-4354-806e-57304e3ab65a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-60485e47-1fb5-418a-ad33-50897bf6d993",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-b92d0774-ab54-4d38-98d9-c852a7874a17",
+      "type": "user-task",
+      "serviceName": "Kiểm tra mạng nội bộ nhà KH",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Kiểm tra tách local , xác định nguồn gây nghẽn session và xử lý.\nTạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-f9dfeb7d-b78b-48ea-bbc9-f4fd14cda3d1",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-1e3fa0fd-9992-4221-9d5f-612ed54dee83",
+      "type": "user-task",
+      "serviceName": "Dây LAN bình thường?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-91cb9c12-c949-47ec-b59a-a38dab219366",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-fde50749-833b-4903-b136-20dd27d4ae55",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-d79b3daf-63cb-43f2-8071-c798b2f8ede4",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-3374807f-aac5-482e-876c-4ded7bb2b7da",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-5c459d08-fcfc-4361-b1b9-8ba07d81a614",
+      "type": "user-task",
+      "serviceName": "Di chuyển AP",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tín hiệu wifi kém/ nhiễu. Tư vấn khách hàng các phương án:\n- Di chuyển vị trí AP đến vị trí KH thường sử dụng.\n- Lắp thêm AP ở vị trí sóng kém để mở rộng vùng phủ wifi.\n\nTạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-8c1b9b3f-c565-4c34-9192-a2fa52beeb4c",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-b57979c5-42a2-4d2a-814e-eb105f6473ef",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-018afb8d-53eb-4476-adf3-d70244790fed",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-1b9102cb-93bc-4c8a-8e40-ed493afa417d",
+      "type": "user-task",
+      "serviceName": "Reset OSP trên inside",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Thực hiện reset OSP trên inside."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-7f8acdfd-3564-4e95-8cb4-22f55ae85ca9",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-3d4d6458-0aa6-4e27-b419-05e560249742",
+      "type": "user-task",
+      "serviceName": "Thay thiết bị",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-3ed1ceb1-8995-4169-b8f7-1c64c27f08ae",
+      "type": "user-task",
+      "serviceName": "Cấu hình sai mode bridge",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn Khách Hàng cấu hình lại mode PPPoE trên thiết bị."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-99db2144-0b0f-466c-abf5-940c460546a6",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-38a089ae-f0e5-46f2-84e0-4fc53b95654d",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-91cb9c12-c949-47ec-b59a-a38dab219366",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-99db2144-0b0f-466c-abf5-940c460546a6",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-394bac8a-022d-4ec8-8a11-867b5d7be283",
+      "type": "user-task",
+      "serviceName": "Kiểm tra nguồn Router",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Kiểm tra Router đã bật nguồn chưa\n2. Rút cắm lại Adapter ở ổ cắm.\n3. Kiểm tra lại nguồn điện đầu vào, đổi ổ cắm điện khác.\n4. Kiểm tra adapter đang cắm vào Router và cắm lại adapter đúng loại đi kèm."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-e7f39d0e-7d93-467d-bb28-51f0f5eaf9b8",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-b5d09e4e-91f5-4a97-a4a8-ffb6380f1e8f",
+      "type": "user-task",
+      "serviceName": "Kiểm tra NAT Session",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn đăng nhập thiết bị Modem/Router:\n1. Kiểm tra bảng NAT Session.\n2. Reboot thiết bị nếu session cao."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-d22189c9-6452-4ada-87d3-e240406ecbfd",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-ceafdc2f-e91c-4d07-8aa1-66c97a85ac45",
+      "type": "user-task",
+      "serviceName": "Cấu hình cổng WAN AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Cấu hình cổng WAN nhận DynamicIP hoặc StacticIP trỏ đúng IP Gateway.\n2. Cấu hình đúng mode Bridge( nếu có)"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-a0674226-0ae7-4c65-ba10-406605367c85",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-feeb137f-c7fa-4499-91fd-f70d78341b8b",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-5a2fbc94-f9aa-4f3b-a9cc-5080a89cc519",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-7f8acdfd-3564-4e95-8cb4-22f55ae85ca9",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-ac314872-a03b-47a8-bd81-670b0e3c33a0",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-3d4d6458-0aa6-4e27-b419-05e560249742",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-e0581d13-c5f7-4110-b0f5-6ead25b87447",
+      "type": "user-task",
+      "serviceName": "Kiểm tra chất lượng wifi",
+      "serviceAlias": "question",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Thực hiện lệnh Ping (Wifi) 20 gói đến AP.\n2. Thực hiện lệnh Ping (Wifi) 20 gói đến DNS FPT.\n\nChất lượng wifi tốt (Ping <10ms, packetloss < 10%) ?"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-5c459d08-fcfc-4361-b1b9-8ba07d81a614",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-b2abd22a-6d47-4a0e-a9e5-96d33e31f35b",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-3364ee8e-56b6-4297-b457-d8d843fded42",
+      "type": "user-task",
+      "serviceName": "Kiểm tra FC",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn Khách Hàng kiểm tra rút cắm lại FC (Không khuyến nghị)"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-405fd3be-533d-4b04-96db-18fde06e1495",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-3e0ba0ae-a878-4c0d-b209-d668e2a1efb6",
+      "type": "user-task",
+      "serviceName": "Kiểm tra dây LAN từ ONU đến Router",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Kiểm tra dây cắm đúng vào cổng LAN trên ONU và cổng WAN trên Router. Rút cắm lại dây Lan.\n2. Kiểm tra dây LAN, đầu RJ45 có bị đứt, hỏng, bấm sai chuẩn, bấm lại dây LAN đảm bảo đúng chuẩn 8 sợi hoạt động."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-55577681-00e9-4370-8f51-39599fb605da",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-96bd94e2-781e-4bac-8261-a0d67524dd54",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-b2abd22a-6d47-4a0e-a9e5-96d33e31f35b",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-c29158db-dc2e-43dd-9fe1-0a0df0497218",
+      "type": "user-task",
+      "serviceName": "Cấu hình giới hạn băng thông",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Khuyến nghị Khách Hàng cấu hình bỏ giới hạn băng thông."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-3206632b-6ec1-465a-b396-150cb15fd60f",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-3d2316d4-a274-4131-8508-eab461dd578f",
+      "type": "user-task",
+      "serviceName": "Thiết bị KHG đặt IP sai, DNS sai",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn KHG đặt chế độ nhận IP tự động"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c9cd3a7b-a6cd-4901-a9f6-a0879e9b3365",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-093d7157-7903-4e13-bba5-c0365b5766cb",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-a71df324-37d1-466d-a2aa-7f169b93943f",
+      "type": "user-task",
+      "serviceName": "Kiểm tra thiết bị Khách Hàng",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1.Hướng dẫn KH tắt các ứng dụng tiêu tốn RAM, CPU, DISK và reboot thiết bị kiểm tra lại.\n2.Hướng dẫn KH quét virus\n3.Giải thích cho KHG nếu cấu hình máy quá yếu"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-d82665bc-e77b-468a-906f-6ea538cb36da",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-5b3ed334-8408-40f9-ac02-77eff15b6906",
+      "type": "user-task",
+      "serviceName": "Kiểm tra công suất thu Wifi",
+      "serviceAlias": "question",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Công suất thu Wifi đạt từ -65dBm đến -10dBm không?"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-e0581d13-c5f7-4110-b0f5-6ead25b87447",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-5c459d08-fcfc-4361-b1b9-8ba07d81a614",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-46779058-4434-408c-973e-4efd9b30ec14",
+      "type": "user-task",
+      "serviceName": "Kiểm tra nguồn, adapter Router",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "1. Rút cắm lại Adapter ở ổ cắm\n2. Kiểm tra lại nguồn điện đầu vào, đổi ổ cắm điện khác\n3. Kiểm tra adapter đang cắm vào Router và cắm lại adapter đúng loại đi kèm. \n4. Di dời vị trí ONT để tản nhiệt."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-0d1ce3b0-e5a7-40c6-bc4b-c529db332694",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-578acccc-bbf4-4382-a918-6040ac2a96f3",
+      "type": "user-task",
+      "serviceName": "Kiểm tra wifi từ AP đến thiết bị KH",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn Khách Hàng sử dụng Wifiman để đo công suất thu wifi tại vị trí Khách Hàng sử dụng."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-5b3ed334-8408-40f9-ac02-77eff15b6906",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-229e1f2f-87bf-4d3b-9f4a-a532e9b840e2",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-ff006694-e3e6-4e01-812e-bf7aacea0656",
+      "type": "user-task",
+      "serviceName": "Thay Adapter / thay AP",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-17eb90e3-6bd2-48a5-9753-0742854b706b",
+      "type": "user-task",
+      "serviceName": "ONU/ONT đã sáng đèn bình thường ?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-abc1b06f-dd2c-448f-b9bb-ab6c7ffeeb89",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-60ad15ec-06ea-4e09-9ba7-83a46cfd69ae",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-00ebe605-f7d7-42c6-82c3-a41daa462ed7",
+      "type": "service-task",
+      "serviceName": "Lấy thông số hệ thống",
+      "serviceAlias": "get-info",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-1b9102cb-93bc-4c8a-8e40-ed493afa417d",
+          "properties": [
+            {
+              "property": "Code",
+              "type": "String",
+              "value": "code",
+              "comparison": 0,
+              "input": "30",
+              "name": "Code"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 1
+          },
+          "condition": "Hợp đồng sai OSP",
+          "result": null
+        },
+        {
+          "next": "node-cb1e6cf4-9acf-4f35-9df2-617f94aeb7d2",
+          "properties": [
+            {
+              "property": "Code",
+              "type": "String",
+              "value": "code",
+              "comparison": 0,
+              "input": "40",
+              "name": "Code"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 2
+          },
+          "condition": "Hợp đồng sai MAC",
+          "result": null
+        },
+        {
+          "next": "node-baad3b4c-6470-43ce-8acb-a9169d4b9067",
+          "properties": [
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "N/A",
+              "name": "IP Address"
+            },
+            {
+              "property": "OnStatus",
+              "type": "String",
+              "value": "onStatus",
+              "comparison": 1,
+              "input": "Normal",
+              "name": "Status"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 3
+          },
+          "condition": "Nghi ngờ lỗi tín hiệu",
+          "result": null
+        },
+        {
+          "next": "node-90a9bdf8-12c3-41b0-9d15-7287c0682322",
+          "properties": [
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "N/A",
+              "name": "IP Address"
+            },
+            {
+              "property": "OnStatus",
+              "type": "String",
+              "value": "onStatus",
+              "comparison": 1,
+              "input": "Normal",
+              "name": "Status"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 4
+          },
+          "condition": "Nghi ngờ lỗi thiết bị ONU/ONT",
+          "result": null
+        },
+        {
+          "next": "node-5f2d0820-a33e-4c30-9460-902dda4d8e5e",
+          "properties": [
+            {
+              "property": "Model",
+              "type": "String",
+              "value": "model",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "G-97D2, G-97RG3, N300M, G-97RG6M, G-97RG6W, AC1000F, AC1000HI, AX1800GZ, AC1000Z, ONT-AX1800C",
+              "name": "Model"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "N/A",
+              "name": "IP Address"
+            },
+            {
+              "property": "DeviceInfo.UpTime",
+              "type": "number",
+              "value": "deviceUpTime",
+              "comparison": 4,
+              "gate": "OR",
+              "input": "10080",
+              "name": "System uptime"
+            },
+            {
+              "property": "ONUTemp",
+              "type": "number",
+              "value": "onuTemp",
+              "comparison": 4,
+              "gate": "OR",
+              "input": "70",
+              "name": "ONU Temp"
+            },
+            {
+              "property": "ONURXPower",
+              "type": "number",
+              "value": "onuRX",
+              "comparison": 2,
+              "input": "-23.5",
+              "name": "ONU RX"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 22
+          },
+          "condition": "Nghi ngờ ONU chập chờn",
+          "result": null
+        },
+        {
+          "next": "node-098f4759-4a29-414d-bcc1-99361f4c0f70",
+          "properties": [
+            {
+              "property": "Model",
+              "type": "String",
+              "value": "model",
+              "comparison": 6,
+              "gate": "AND",
+              "input": "G-97D2, G-97RG3, N300M, G-97RG6M, G-97RG6W, AC1000F, AC1000HI, AX1800GZ, AC1000Z, ONT-AX1800C",
+              "name": "Model"
+            },
+            {
+              "property": "ONUTemp",
+              "type": "number",
+              "value": "onuTemp",
+              "comparison": 4,
+              "gate": "OR",
+              "input": "70",
+              "name": "ONU Temp"
+            },
+            {
+              "property": "DeviceInfo.UpTime",
+              "type": "number",
+              "value": "deviceUpTime",
+              "comparison": 4,
+              "gate": "OR",
+              "input": "10080",
+              "name": "System uptime"
+            },
+            {
+              "property": "Memory",
+              "type": "number",
+              "value": "memory",
+              "comparison": 4,
+              "gate": "OR",
+              "input": "80",
+              "name": "Memory"
+            },
+            {
+              "property": "CPUUsage",
+              "type": "number",
+              "value": "cpuUsage",
+              "comparison": 4,
+              "gate": "OR",
+              "input": "60",
+              "name": "CPU"
+            },
+            {
+              "property": "ONURXPower",
+              "type": "number",
+              "value": "onuRX",
+              "comparison": 2,
+              "input": "-23.5",
+              "name": "ONU RX"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 6
+          },
+          "condition": "Nghi ngờ ONT chập chờn",
+          "result": null
+        },
+        {
+          "next": "node-46779058-4434-408c-973e-4efd9b30ec14",
+          "properties": [
+            {
+              "property": "Model",
+              "type": "String",
+              "value": "model",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "G-97D2, G-97RG3, N300M, G-97RG6M, G-97RG6W, AC1000F, AC1000HI, AX1800GZ, AC1000Z, ONT-AX1800C",
+              "name": "Model"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "N/A",
+              "name": "IP Address"
+            },
+            {
+              "property": "DeviceInfo.UpTime",
+              "type": "number",
+              "value": "deviceUpTime",
+              "comparison": 4,
+              "gate": "OR",
+              "input": "10080",
+              "name": "System uptime"
+            },
+            {
+              "property": "ONUTemp",
+              "type": "number",
+              "value": "onuTemp",
+              "comparison": 4,
+              "input": "70",
+              "name": "ONU Temp"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 23
+          },
+          "condition": "Nghi ngờ router chập chờn",
+          "result": null
+        },
+        {
+          "next": "node-129e3958-04df-4a72-b78d-cae60c0e7548",
+          "properties": [
+            {
+              "property": "Model",
+              "type": "String",
+              "value": "model",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "G-97D2, G-97RG3, N300M, G-97RG6M, G-97RG6W, AC1000F, AC1000HI, AX1800GZ, AC1000Z, ONT-AX1800C",
+              "name": "Model"
+            },
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useWifi",
+              "type": "String",
+              "value": "useWifi",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use Wifi"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 11
+          },
+          "condition": "Nghi ngờ Wifi bị ẩn trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-486d848a-e0ed-49a4-982b-01ef551a56f9",
+          "properties": [
+            {
+              "property": "Model",
+              "type": "String",
+              "value": "model",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "G-97D2, G-97RG3, N300M, G-97RG6M, G-97RG6W, AC1000F, AC1000HI, AX1800GZ, AC1000Z, ONT-AX1800C",
+              "name": "Model"
+            },
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useWifi",
+              "type": "String",
+              "value": "useWifi",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use Wifi"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 12
+          },
+          "condition": "Nghi ngờ cấu hình wifi chưa tối ưu trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-d687a8ad-ccb3-4543-8223-b8548c115aa3",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 8
+          },
+          "condition": "Nghi ngờ DNS chưa tối ưu trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-af06558b-57b1-41a5-9e30-cf7e6b225ea1",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 9
+          },
+          "condition": "Nghi ngờ sai DHCP trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-2c0cd472-2dd3-4ea4-ac55-64d21f94f1fe",
+          "properties": [
+            {
+              "property": "ContractTypeName",
+              "type": "String",
+              "value": "servicePlan",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "Giga",
+              "name": "Service Plan"
+            },
+            {
+              "property": "Output",
+              "type": "String",
+              "value": "output",
+              "comparison": 4,
+              "gate": "OR",
+              "input": "300000",
+              "name": "LL Download"
+            },
+            {
+              "property": "Input",
+              "type": "String",
+              "value": "input",
+              "comparison": 4,
+              "input": "300000",
+              "name": "LL Upload"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 20
+          },
+          "condition": "Nghi ngờ gói cước không đáp ứng nhu cầu",
+          "result": null
+        },
+        {
+          "next": "node-57227259-d40b-4b89-aa89-d4857de8cdd3",
+          "properties": [
+            {
+              "property": "useWifi",
+              "type": "String",
+              "value": "useWifi",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use Wifi"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "N/A",
+              "name": "IP Address"
+            },
+            {
+              "property": "Wi-Fi2.4GhzScore",
+              "type": "number",
+              "value": "wifiScore",
+              "comparison": 0,
+              "gate": "OR",
+              "input": "1",
+              "name": "Wifi Score 2.4GHz"
+            },
+            {
+              "property": "Wi-Fi2.4GhzScore",
+              "type": "number",
+              "value": "wifiScore",
+              "comparison": 0,
+              "gate": "OR",
+              "input": "2",
+              "name": "Wifi Score 2.4GHz"
+            },
+            {
+              "property": "Wi-Fi5GhzScore",
+              "type": "number",
+              "value": "wifiScore5",
+              "comparison": 0,
+              "gate": "OR",
+              "input": "-2",
+              "name": "Wifi Score 5GHz"
+            },
+            {
+              "property": "Wi-Fi5GhzScore",
+              "type": "number",
+              "value": "wifiScore5",
+              "comparison": 0,
+              "gate": "OR",
+              "input": "1",
+              "name": "Wifi Score 5GHz"
+            },
+            {
+              "property": "Wi-Fi5GhzScore",
+              "type": "number",
+              "value": "wifiScore5",
+              "comparison": 0,
+              "gate": "OR",
+              "input": "2",
+              "name": "Wifi Score 5GHz"
+            },
+            {
+              "property": "Wi-Fi2.4GhzScore",
+              "type": "number",
+              "value": "wifiScore",
+              "comparison": 0,
+              "input": "-2",
+              "name": "Wifi Score 2.4GHz"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 21
+          },
+          "condition": "Lỗi Wifi từ Modem đến thiết bị KH",
+          "result": null
+        },
+        {
+          "next": "node-9292dd7e-d115-4030-849d-43422627da03",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 10
+          },
+          "condition": "Nghi ngờ thiết bị KH bị chặn trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-3ed1ceb1-8995-4169-b8f7-1c64c27f08ae",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 11
+          },
+          "condition": "Cấu hình sai mode trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-d84a2902-87f3-4033-bf04-9623b8ca88b6",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 15
+          },
+          "condition": "Nghi ngờ chưa bật Nat/Wan trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-c29158db-dc2e-43dd-9fe1-0a0df0497218",
+          "properties": [
+            {
+              "property": "Model",
+              "type": "String",
+              "value": "model",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "G-97D2, G-97RG3, G-97RG3T, N300M, G-97RG6M, G-97RG6W, AC1000F, AC1000HI, AX1800GZ, AC1000Z, ONT-AX1800C",
+              "name": "Model"
+            },
+            {
+              "property": "OnStatus",
+              "type": "String",
+              "value": "onStatus",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "Normal",
+              "name": "Status"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 17
+          },
+          "condition": "Nghi ngờ có giới hạn băng thông trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-a71df324-37d1-466d-a2aa-7f169b93943f",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 24
+          },
+          "condition": "Thiết bị KH nghi ngờ lỗi",
+          "result": null
+        },
+        {
+          "next": "node-76faf2cd-9289-478c-8ab6-db33282ed5d8",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 14
+          },
+          "condition": "Nghi ngờ có cấu hình chặn dịch vụ trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-b5d09e4e-91f5-4a97-a4a8-ffb6380f1e8f",
+          "properties": [
+            {
+              "property": "Model",
+              "type": "String",
+              "value": "model",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "G-97D2, G-97RG3, N300M, G-97RG6M, G-97RG6W, AC1000F, AC1000HI, AX1800GZ, AC1000Z, ONT-AX1800C",
+              "name": "Model"
+            },
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 16
+          },
+          "condition": "Nghi ngờ nghẽn session trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-e525ce6b-0baf-41bc-a4c4-075d23f75689",
+          "properties": [
+            {
+              "property": "useLAN",
+              "type": "String",
+              "value": "useLAN",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use LAN"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 18
+          },
+          "condition": "Nghi ngờ lỗi cổng LAN trên thiết bị chính",
+          "result": null
+        },
+        {
+          "next": "node-c491129c-1198-4f9a-9640-1e2ecfad6715",
+          "properties": [
+            {
+              "property": "Model",
+              "type": "String",
+              "value": "model",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "G-97D2, G-97RG3, N300M, G-97RG6M, G-97RG6W, AC1000F, AC1000HI, AX1800GZ, AC1000Z, ONT-AX1800C",
+              "name": "Model"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 0,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 7
+          },
+          "condition": "Hợp đồng sai cấu hình PPPoE",
+          "result": null
+        },
+        {
+          "next": "node-3e0ba0ae-a878-4c0d-b209-d668e2a1efb6",
+          "properties": [
+            {
+              "property": "Model",
+              "type": "String",
+              "value": "model",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "G-97D2, G-97RG3, N300M, G-97RG6M, G-97RG6W, AC1000F, AC1000HI, AX1800GZ, AC1000Z, ONT-AX1800C",
+              "name": "Model"
+            },
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Enable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Online",
+              "name": "Operation"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 0,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 25
+          },
+          "condition": "Nghi ngờ lỗi dây LAN ONU",
+          "result": null
+        },
+        {
+          "next": "node-f5719558-0ca2-406e-a263-5ca51e1337d1",
+          "properties": [
+            {
+              "property": "useLAN",
+              "type": "String",
+              "value": "useLAN",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use LAN"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 26
+          },
+          "condition": "Nghi ngờ lỗi dây LAN Modem đến thiết bị KH",
+          "result": null
+        },
+        {
+          "next": "node-b4803922-4274-48bc-9056-e1322c60fe8c",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 27
+          },
+          "condition": "Nghi ngờ lỗi thiết bị AP",
+          "result": null
+        },
+        {
+          "next": "node-68dcb871-5cf2-4936-b1bc-b1b65a94f8cc",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "isWiredAP",
+              "type": "String",
+              "value": "isWiredAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use wired AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 28
+          },
+          "condition": "Nghi ngờ lỗi dây LAN AP",
+          "result": null
+        },
+        {
+          "next": "node-bfe585d5-4d31-4e3d-b157-babf30dfd341",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 29
+          },
+          "condition": "Nghi ngờ AP chập chờn",
+          "result": null
+        },
+        {
+          "next": "node-2960a475-86ee-4027-b6a7-d5a84f8bcfd3",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 30
+          },
+          "condition": "Nghi ngờ sai IP, DHCP AP",
+          "result": null
+        },
+        {
+          "next": "node-f7a7a9fd-7e8f-4811-8507-9ac2b77c266e",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 31
+          },
+          "condition": "Nghi ngờ DNS AP chưa tối ưu",
+          "result": null
+        },
+        {
+          "next": "node-ceafdc2f-e91c-4d07-8aa1-66c97a85ac45",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 32
+          },
+          "condition": "Nghi ngờ cấu hình sai cổng WAN AP",
+          "result": null
+        },
+        {
+          "next": "node-febf14eb-ffe1-414a-a5a2-d7d207329adb",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 33
+          },
+          "condition": "Nghi ngờ AP đang cấu hình chặn dịch vụ",
+          "result": null
+        },
+        {
+          "next": "node-d253f045-c582-4a6f-b627-9c8f3be6901c",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 34
+          },
+          "condition": "Nghi ngờ AP đang cấu hình chặn thiết bị KH",
+          "result": null
+        },
+        {
+          "next": "node-2cbc8389-acba-4abf-9afa-423753925846",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 35
+          },
+          "condition": "Nghi ngờ Wifi AP bị tắt",
+          "result": null
+        },
+        {
+          "next": "node-739eda34-a197-45e2-a2a2-38e73da30e60",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 36
+          },
+          "condition": "Nghi ngờ Wifi AP bị ẩn",
+          "result": null
+        },
+        {
+          "next": "node-3621078f-6726-4716-8f37-3308b2c01a25",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 37
+          },
+          "condition": "Cấu hình Wifi AP chưa chuẩn",
+          "result": null
+        },
+        {
+          "next": "node-c1d788e7-26d1-422b-aa71-1ecbf266535f",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 38
+          },
+          "condition": "Kênh sóng wifi AP chưa tối ưu",
+          "result": null
+        },
+        {
+          "next": "node-0777181d-7d7f-4915-85fd-6464237e2697",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "useLAN",
+              "type": "String",
+              "value": "useLAN",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use LAN"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 39
+          },
+          "condition": "Nghi ngờ lỗi cổng LAN AP",
+          "result": null
+        },
+        {
+          "next": "node-dd08f1b7-a91d-4e83-b700-33567334a12a",
+          "properties": [
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "isWiredAP",
+              "type": "String",
+              "value": "isWiredAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "false",
+              "name": "Use wired AP"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "N/A",
+              "name": "IP Address"
+            },
+            {
+              "property": "Wi-Fi5GhzScore",
+              "type": "number",
+              "value": "wifiScore5",
+              "comparison": 0,
+              "gate": "OR",
+              "input": "-2",
+              "name": "Wifi Score 5GHz"
+            },
+            {
+              "property": "Wi-Fi5GhzScore",
+              "type": "number",
+              "value": "wifiScore5",
+              "comparison": 0,
+              "gate": "OR",
+              "input": "1",
+              "name": "Wifi Score 5GHz"
+            },
+            {
+              "property": "Wi-Fi5GhzScore",
+              "type": "number",
+              "value": "wifiScore5",
+              "comparison": 0,
+              "gate": "OR",
+              "input": "2",
+              "name": "Wifi Score 5GHz"
+            },
+            {
+              "property": "Wi-Fi2.4GhzScore",
+              "type": "number",
+              "value": "wifiScore",
+              "comparison": 0,
+              "gate": "OR",
+              "input": "-2",
+              "name": "Wifi Score 2.4GHz"
+            },
+            {
+              "property": "Wi-Fi2.4GhzScore",
+              "type": "number",
+              "value": "wifiScore",
+              "comparison": 0,
+              "gate": "OR",
+              "input": "1",
+              "name": "Wifi Score 2.4GHz"
+            },
+            {
+              "property": "Wi-Fi2.4GhzScore",
+              "type": "number",
+              "value": "wifiScore",
+              "comparison": 0,
+              "input": "2",
+              "name": "Wifi Score 2.4GHz"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 19
+          },
+          "condition": "Nghi ngờ lỗi wifi Mesh",
+          "result": null
+        },
+        {
+          "next": "node-394bac8a-022d-4ec8-8a11-867b5d7be283",
+          "properties": [
+            {
+              "property": "Model",
+              "type": "String",
+              "value": "model",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "G-97D2, G-97RG3, N300M, G-97RG6M, G-97RG6W, AC1000F, AC1000HI, AX1800GZ, AC1000Z, ONT-AX1800C",
+              "name": "Model"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 0,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 5
+          },
+          "condition": "Nghi ngờ lỗi thiết bị Router",
+          "result": null
+        },
+        {
+          "next": "node-382c472b-34e7-4c7f-9427-915a30f3ab46",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "useLAN",
+              "type": "String",
+              "value": "useLAN",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use LAN"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 40
+          },
+          "condition": "Nghi ngờ dây lỗi LAN AP đến thiết bị KH",
+          "result": null
+        },
+        {
+          "next": "node-578acccc-bbf4-4382-a918-6040ac2a96f3",
+          "properties": [
+            {
+              "property": "Admin",
+              "type": "String",
+              "value": "admin",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Disable",
+              "name": "Admin"
+            },
+            {
+              "property": "Operation",
+              "type": "String",
+              "value": "operation",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "Offline",
+              "name": "Operation"
+            },
+            {
+              "property": "useAP",
+              "type": "String",
+              "value": "useAP",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use AP"
+            },
+            {
+              "property": "useWifi",
+              "type": "String",
+              "value": "useWifi",
+              "comparison": 0,
+              "gate": "AND",
+              "input": "true",
+              "name": "Use Wifi"
+            },
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "input": "N/A",
+              "name": "IP Address"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 41
+          },
+          "condition": "Nghi ngờ lỗi Wifi từ AP đến thiết bị KH",
+          "result": null
+        },
+        {
+          "next": "node-6ed0aafc-7df2-4eb7-ad30-8962a80765af",
+          "properties": [
+            {
+              "property": "IPAddress",
+              "type": "String",
+              "value": "ipAddress",
+              "comparison": 1,
+              "gate": "AND",
+              "input": "N/A",
+              "name": "IP Address"
+            },
+            {
+              "property": "ONURXPower",
+              "type": "number",
+              "value": "onuRX",
+              "comparison": 2,
+              "input": "-23.5",
+              "name": "ONU RX"
+            }
+          ],
+          "scenarioBranch": {
+            "enable": true,
+            "id": 42
+          },
+          "condition": "Suy hao không đạt chuẩn",
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "contract",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "id": "node-2c0cd472-2dd3-4ea4-ac55-64d21f94f1fe",
+      "type": "user-task",
+      "serviceName": "Tư vấn gói cước",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Khuyến nghị tư vấn Khách Hàng sử dụng gói Sky/Meta."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-31ad3a33-3e34-4497-918b-29e2aa1104d1",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-3621078f-6726-4716-8f37-3308b2c01a25",
+      "type": "user-task",
+      "serviceName": "Cấu hình chuẩn Wifi AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Khuyến nghị hướng dẫn Khách Hàng cấu hình wifi theo các chuẩn:\n1. Security Type: = WPA/WPA2-Personal\n2. Encryption Type: = TKIP/AES\n3. 802.11 mode: = Auto(802.11b/g/n/ac/ax)"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-f9dfeb7d-b78b-48ea-bbc9-f4fd14cda3d1",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-498fc571-6a82-475f-b8c7-cd2d08d6b3f2",
+      "type": "user-task",
+      "serviceName": "AP sáng đèn bình thường",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-77e4e620-c348-4c91-8c4b-980265b88ff0",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-ff006694-e3e6-4e01-812e-bf7aacea0656",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-60ad15ec-06ea-4e09-9ba7-83a46cfd69ae",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-77e4e620-c348-4c91-8c4b-980265b88ff0",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-acecc453-87ec-4fc7-a4ca-d5f0c50527ee",
+      "type": "user-task",
+      "serviceName": "Kiểm tra FC",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn Khách Hàng kiểm tra rút cắm lại FC (Không khuyến nghị)"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-12f7fd49-8bff-48c9-8956-4326b5bf9e38",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-da26f5a7-9ccb-4721-a21d-e75707ed7048",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-8b2fe447-3d81-4707-9f34-bc00766d9f46",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-486d848a-e0ed-49a4-982b-01ef551a56f9",
+      "type": "user-task",
+      "serviceName": "Cấu hình tối ưu wifi",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Khuyến nghị hướng dẫn Khách Hàng cấu hình wifi theo các chuẩn:\n1. Kênh sóng auto\n2. Security Type: = WPA/WPA2-Personal\n3. Encryption Type: = TKIP/AES\n4. 802.11 mode: = Auto(802.11b/g/n/ac/ax)"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-58f999f5-c820-4418-b9de-a680572c2084",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-c43960bf-82e8-437b-a283-3f2b51d51b02",
+      "type": "user-task",
+      "serviceName": "Các dịch vụ đã sử dụng bình thường ?",
+      "serviceAlias": "resolve",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-13d47c33-54a7-4bca-869a-c94c7396726f",
+      "type": "user-task",
+      "serviceName": "Kiểm tra kết nối wifi trên thiết bị Khách Hàng",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Hướng dẫn KH kết nối lại đúng Wifi nhà KH"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-9a724eae-5e67-4be7-a039-9108b714ccd5",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-c95694b1-160a-4bdd-b28b-0c260441b980",
+      "type": "user-task",
+      "serviceName": "Thay thiết bị",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-12f7fd49-8bff-48c9-8956-4326b5bf9e38",
+      "type": "user-task",
+      "serviceName": "Tín hiệu đã bình thường ?",
+      "serviceAlias": "question",
+      "descriptions": [],
+      "comparison_properties": [
+        {
+          "next": "node-604b24c3-e044-4a94-8f4b-b3f8307b9368",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        },
+        {
+          "next": "node-62681b7e-0ca7-4ec6-bbf8-9ee508369f62",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "No"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-d687a8ad-ccb3-4543-8223-b8548c115aa3",
+      "type": "user-task",
+      "serviceName": "Cấu hình DNS",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "DNS có thể không phân giải được dịch vụ của Khách Hàng, khuyến nghị hướng dẫn Khách Hàng cấu hình lại DNS FPT"
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-093d7157-7903-4e13-bba5-c0365b5766cb",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-739eda34-a197-45e2-a2a2-38e73da30e60",
+      "type": "user-task",
+      "serviceName": "Cấu hình hiện wifi AP",
+      "serviceAlias": "confirm",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Truy cập vào Gateway AP làm theo hướng dẫn từng dòng thiết bị :\n1.Cấu hình hiện Wifi."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-d79b3daf-63cb-43f2-8071-c798b2f8ede4",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "node-fde50749-833b-4903-b136-20dd27d4ae55",
+      "type": "user-task",
+      "serviceName": "Thay dây LAN",
+      "serviceAlias": "resolve",
+      "descriptions": [
+        {
+          "queue": "NON_TECH",
+          "description": "Tạo checklist và thông báo KH sẽ có TIN/PNC đến phục vụ."
+        }
+      ],
+      "comparison_properties": [
+        {
+          "next": "node-c99d0e54-73e0-4611-b8b7-e7722330ee7a",
+          "properties": [
+            {
+              "property": "Click",
+              "type": "boolean",
+              "value": "Click",
+              "comparison": 0,
+              "input": "Yes"
+            }
+          ],
+          "scenarioBranch": null,
+          "condition": null,
+          "result": null
+        }
+      ],
+      "input_properties": [
+        {
+          "property": "Click",
+          "type": "boolean"
+        }
+      ]
+    }
+  ],
+  "contract": null,
+  "mac": null,
+  "objId": 0,
+  "sender_id": null,
+  "queue": null
+}
