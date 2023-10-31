@@ -58,54 +58,59 @@ public class RootChartServiceImpl implements RootChartService {
                 getContractModel(),
                 apiService.getMacFromContract(),
                 apiService.getAllInfoToCPE().getData());
+
         try {
             JSONObject mergeObjJson = new JSONObject(objectMapper.writeValueAsString(mergeObject));
             String conditionMessage = "";
+            boolean overallResult = true;
+
             for (ComparisonPropertiesDTO comparisonProperty : listComparisonPropertiesDTO) {
                 for (DetailComparisonDTO property : comparisonProperty.getProperties()) {
-                    String valueMergeObjJson = mergeObjJson.optString(property.getProperty(),
-                            null);
-                    boolean overallResult = false;
-                    if (property.getProperty().equalsIgnoreCase("OnStatus") &&
-                            property.getInput().equals("Normal")) {
-                        valueMergeObjJson = "Normal";
-                    }
+                    String valueMergeObjJson = mergeObjJson.optString(property.getProperty(), null);
+
                     if (valueMergeObjJson != null) {
                         if ("number".equals(property.getType())) {
                             switch (property.getProperty()) {
                                 case "DeviceInfo.UpTime": {
-                                    valueMergeObjJson = parseDurationToMillis(valueMergeObjJson)
-                                            + "";
+                                    valueMergeObjJson = parseDurationToMillis(valueMergeObjJson) + "";
                                     break;
                                 }
-                                case "CPUUsage": {
-                                    valueMergeObjJson = valueMergeObjJson.replace("%", "");
-                                    break;
-                                }
+                                case "CPUUsage":
                                 case "Memory": {
                                     valueMergeObjJson = valueMergeObjJson.replace("%", "");
                                     break;
                                 }
                             }
                         }
-                        overallResult = getOverallResult(property.getGate(),
-                                compare(valueMergeObjJson, property.getInput(), property.getType(),
-                                        property.getComparison() + ""));
+
+                        boolean propertyResult = compare(valueMergeObjJson, property.getInput(), property.getType(),
+                                property.getComparison() + "");
+
                         System.out.println(
                                 valueMergeObjJson + " " +
                                         ComparisonTypeEnum.getValueByCode(property.getComparison())
                                         + " "
-                                        + property.getInput() + " - " + overallResult);
-                        setResult(overallResult);
+                                        + property.getInput() + " - " + propertyResult);
 
-                    }
-                    if (overallResult) {
-                        conditionMessage = comparisonProperty.getCondition();
+                        overallResult = getOverallResult(property.getGate(), propertyResult);
+
+                        if ("and".equalsIgnoreCase(property.getGate()) && !overallResult) {
+                            break; // If "and" gate and any property is false, exit the loop
+                        }
+                    } else {
+                        overallResult = false;
+                        break; // If value is null, set overall result to false and exit the loop
                     }
                 }
 
+                if (!overallResult) {
+                    conditionMessage = comparisonProperty.getCondition();
+                    break; // Break out of the loop if any property does not satisfy the condition
+                }
             }
-            ;
+
+            setResult(overallResult);
+
             if (getResult()) {
                 return conditionMessage;
             } else {
@@ -129,43 +134,35 @@ public class RootChartServiceImpl implements RootChartService {
         if (type != null) {
             switch (type) {
                 case "String": {
-                    return handleStringComparison(value1, value2, comparison);
+                    switch (comparison) {
+                        case "0":
+                            return value1.equals(value2);
+                        case "1":
+                            return !value1.equals(value2);
+                    }
+                    return false;
                 }
                 case "number": {
-                    return handleNumberComparison(value1, value2, comparison);
+                    double numValue1 = Double.parseDouble(value1);
+                    double numValue2 = Double.parseDouble(value2);
+
+                    switch (comparison) {
+                        case "0":
+                            return numValue1 == numValue2;
+                        case "1":
+                            return numValue1 != numValue2;
+                        case "2":
+                            return numValue1 < numValue2;
+                        case "3":
+                            return numValue1 <= numValue2;
+                        case "4":
+                            return numValue1 > numValue2;
+                        case "5":
+                            return numValue1 >= numValue2;
+                    }
+                    return false;
                 }
             }
-        }
-        return false;
-    }
-
-    private boolean handleStringComparison(String value1, String value2, String comparison) {
-        switch (comparison) {
-            case "0":
-                return value1.equals(value2);
-            case "1":
-                return !value1.equals(value2);
-        }
-        return false;
-    }
-
-    private boolean handleNumberComparison(String value1, String value2, String comparison) {
-        double numValue1 = Double.parseDouble(value1);
-        double numValue2 = Double.parseDouble(value2);
-
-        switch (comparison) {
-            case "0":
-                return numValue1 == numValue2;
-            case "1":
-                return numValue1 != numValue2;
-            case "2":
-                return numValue1 < numValue2;
-            case "3":
-                return numValue1 <= numValue2;
-            case "4":
-                return numValue1 > numValue2;
-            case "5":
-                return numValue1 >= numValue2;
         }
         return false;
     }

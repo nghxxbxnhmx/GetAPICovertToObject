@@ -98,17 +98,4 @@ public class GetApiServiceImpl implements GetApiService {
         // return null;
         // }
     }
-
-    @Override
-    public String jsonCompare() {
-        String url = "src\\main\\resources\\static\\store\\data-rootchart.json";
-        ContractDTO contractDTO = getContractFromMac();
-        MacDTO macDTO = getMacFromContract();
-        DeviceInfoModel deviceInfoModel = getAllInfoToCPE().getData();
-
-        // JsonCompareUtil.compareObjectsWithJson(contractDTO, url);
-        // JsonCompareUtil.compareObjectsWithJson(macDTO, url);
-        // JsonCompareUtil.compareObjectsWithJson(deviceInfoModel, url);
-        return "Okay";
-    }
 }

@@ -10,7 +10,8 @@ import com.ok_http.models.RootChartModel;
 @Service
 public interface GetApiService {
     ContractDTO getContractFromMac();
+
     MacDTO getMacFromContract();
-    AllInfoToCpeDTO  getAllInfoToCPE();
-    String jsonCompare();
+
+    AllInfoToCpeDTO getAllInfoToCPE();
 }

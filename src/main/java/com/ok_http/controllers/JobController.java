@@ -36,16 +36,11 @@ public class JobController {
         return ResponseEntity.ok(apiService.getAllInfoToCPE());
     }
 
-    @PostMapping("/ReadDataRootChart")
-    public String readDataRootChart() {
-        return apiService.jsonCompare();
-    }
-
     @PostMapping(value = "/GetDataRootChart")
-    public ResponseEntity<List <NodeDetailDTO>> getDataRootChart() {
+    public ResponseEntity<List<NodeDetailDTO>> getDataRootChart() {
         return ResponseEntity.ok(rootChartService.getDataRootChart().getData());
     }
-    
+
     @PostMapping("/GetStartId")
     public String hehe() {
         return rootChartService.process();
