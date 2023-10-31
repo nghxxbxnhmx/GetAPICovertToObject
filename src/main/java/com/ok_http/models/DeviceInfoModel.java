@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class DeviceInfoModel {
     @JsonProperty("DeviceInfo.UpTime")
-    public String upTime;
+    public String deviceUpTime;
 
     @JsonProperty("LANDevice.1.WLANConfiguration.5.PreSharedKey.1.KeyPassphrase")
     public String wlanKey1;
@@ -225,4 +225,3 @@ public class DeviceInfoModel {
     @JsonProperty("CPUUsage")
     public String cpuUsage;
 }
-

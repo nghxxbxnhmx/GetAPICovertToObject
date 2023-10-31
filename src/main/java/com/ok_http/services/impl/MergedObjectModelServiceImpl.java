@@ -49,7 +49,7 @@ public class MergedObjectModelServiceImpl implements MergedObjectModelService {
         mergeObjectModel.setMacContract(getValueOrDefault(mac.getMacContract()));
         mergeObjectModel.setFunctionInfo(getValueOrDefault(mac.getFunctionInfo()));
 
-        mergeObjectModel.setUpTime(getValueOrDefault(deviceInfo.upTime));
+        mergeObjectModel.setUpTime(getValueOrDefault(deviceInfo.deviceUpTime));
         mergeObjectModel.setWlanKey1(getValueOrDefault(deviceInfo.wlanKey1));
         mergeObjectModel.setWlanKey2(getValueOrDefault(deviceInfo.wlanKey2));
         mergeObjectModel.setSsid1(getValueOrDefault(deviceInfo.ssid1));
@@ -91,17 +91,24 @@ public class MergedObjectModelServiceImpl implements MergedObjectModelService {
         mergeObjectModel.setBeaconType1(getValueOrDefault(deviceInfo.beaconType1));
         mergeObjectModel.setBeaconType2(getValueOrDefault(deviceInfo.beaconType2));
         mergeObjectModel.setDhcpServerEnable(getValueOrDefault(deviceInfo.dhcpServerEnable));
-        mergeObjectModel.setLanHostConfigManagementDNSServers(getValueOrDefault(deviceInfo.lanHostConfigManagementDNSServers));
+        mergeObjectModel
+                .setLanHostConfigManagementDNSServers(getValueOrDefault(deviceInfo.lanHostConfigManagementDNSServers));
         mergeObjectModel.setTraceRouteDiagnosticsState(getValueOrDefault(deviceInfo.traceRouteDiagnosticsState));
-        mergeObjectModel.setTraceRouteDiagnosticsInterface(getValueOrDefault(deviceInfo.traceRouteDiagnosticsInterface));
+        mergeObjectModel
+                .setTraceRouteDiagnosticsInterface(getValueOrDefault(deviceInfo.traceRouteDiagnosticsInterface));
         mergeObjectModel.setTraceRouteDiagnosticsHost(getValueOrDefault(deviceInfo.traceRouteDiagnosticsHost));
-        mergeObjectModel.setTraceRouteDiagnosticsNumberOfTries(getValueOrDefault(deviceInfo.traceRouteDiagnosticsNumberOfTries));
+        mergeObjectModel.setTraceRouteDiagnosticsNumberOfTries(
+                getValueOrDefault(deviceInfo.traceRouteDiagnosticsNumberOfTries));
         mergeObjectModel.setTraceRouteDiagnosticsTimeout(getValueOrDefault(deviceInfo.traceRouteDiagnosticsTimeout));
-        mergeObjectModel.setTraceRouteDiagnosticsDataBlockSize(getValueOrDefault(deviceInfo.traceRouteDiagnosticsDataBlockSize));
+        mergeObjectModel.setTraceRouteDiagnosticsDataBlockSize(
+                getValueOrDefault(deviceInfo.traceRouteDiagnosticsDataBlockSize));
         mergeObjectModel.setTraceRouteDiagnosticsDSCP(getValueOrDefault(deviceInfo.traceRouteDiagnosticsDSCP));
-        mergeObjectModel.setTraceRouteDiagnosticsMaxHopCount(getValueOrDefault(deviceInfo.traceRouteDiagnosticsMaxHopCount));
-        mergeObjectModel.setTraceRouteDiagnosticsResponseTime(getValueOrDefault(deviceInfo.traceRouteDiagnosticsResponseTime));
-        mergeObjectModel.setTraceRouteDiagnosticsRouteHopsNumberOfEntries(getValueOrDefault(deviceInfo.traceRouteDiagnosticsRouteHopsNumberOfEntries));
+        mergeObjectModel
+                .setTraceRouteDiagnosticsMaxHopCount(getValueOrDefault(deviceInfo.traceRouteDiagnosticsMaxHopCount));
+        mergeObjectModel
+                .setTraceRouteDiagnosticsResponseTime(getValueOrDefault(deviceInfo.traceRouteDiagnosticsResponseTime));
+        mergeObjectModel.setTraceRouteDiagnosticsRouteHopsNumberOfEntries(
+                getValueOrDefault(deviceInfo.traceRouteDiagnosticsRouteHopsNumberOfEntries));
         mergeObjectModel.setMinAddress(getValueOrDefault(deviceInfo.minAddress));
         mergeObjectModel.setMaxAddress(getValueOrDefault(deviceInfo.maxAddress));
         mergeObjectModel.setDhcpLeaseTime(getValueOrDefault(deviceInfo.dhcpLeaseTime));
@@ -110,15 +117,20 @@ public class MergedObjectModelServiceImpl implements MergedObjectModelService {
         mergeObjectModel.setIpPingDiagnosticsState(getValueOrDefault(deviceInfo.ipPingDiagnosticsState));
         mergeObjectModel.setIpPingDiagnosticsInterface(getValueOrDefault(deviceInfo.ipPingDiagnosticsInterface));
         mergeObjectModel.setIpPingDiagnosticsHost(getValueOrDefault(deviceInfo.ipPingDiagnosticsHost));
-        mergeObjectModel.setIpPingDiagnosticsNumberOfRepetitions(getValueOrDefault(deviceInfo.ipPingDiagnosticsNumberOfRepetitions));
+        mergeObjectModel.setIpPingDiagnosticsNumberOfRepetitions(
+                getValueOrDefault(deviceInfo.ipPingDiagnosticsNumberOfRepetitions));
         mergeObjectModel.setIpPingDiagnosticsTimeout(getValueOrDefault(deviceInfo.ipPingDiagnosticsTimeout));
-        mergeObjectModel.setIpPingDiagnosticsDataBlockSize(getValueOrDefault(deviceInfo.ipPingDiagnosticsDataBlockSize));
+        mergeObjectModel
+                .setIpPingDiagnosticsDataBlockSize(getValueOrDefault(deviceInfo.ipPingDiagnosticsDataBlockSize));
         mergeObjectModel.setIpPingDiagnosticsDSCP(getValueOrDefault(deviceInfo.ipPingDiagnosticsDSCP));
         mergeObjectModel.setIpPingDiagnosticsSuccessCount(getValueOrDefault(deviceInfo.ipPingDiagnosticsSuccessCount));
         mergeObjectModel.setIpPingDiagnosticsFailureCount(getValueOrDefault(deviceInfo.ipPingDiagnosticsFailureCount));
-        mergeObjectModel.setIpPingDiagnosticsAverageResponseTime(getValueOrDefault(deviceInfo.ipPingDiagnosticsAverageResponseTime));
-        mergeObjectModel.setIpPingDiagnosticsMinimumResponseTime(getValueOrDefault(deviceInfo.ipPingDiagnosticsMinimumResponseTime));
-        mergeObjectModel.setIpPingDiagnosticsMaximumResponseTime(getValueOrDefault(deviceInfo.ipPingDiagnosticsMaximumResponseTime));
+        mergeObjectModel.setIpPingDiagnosticsAverageResponseTime(
+                getValueOrDefault(deviceInfo.ipPingDiagnosticsAverageResponseTime));
+        mergeObjectModel.setIpPingDiagnosticsMinimumResponseTime(
+                getValueOrDefault(deviceInfo.ipPingDiagnosticsMinimumResponseTime));
+        mergeObjectModel.setIpPingDiagnosticsMaximumResponseTime(
+                getValueOrDefault(deviceInfo.ipPingDiagnosticsMaximumResponseTime));
         mergeObjectModel.setDnsServers(getValueOrDefault(deviceInfo.dnsServers));
         mergeObjectModel.setMemory(getValueOrDefault(deviceInfo.memory));
         mergeObjectModel.setCpuUsage(getValueOrDefault(deviceInfo.cpuUsage));

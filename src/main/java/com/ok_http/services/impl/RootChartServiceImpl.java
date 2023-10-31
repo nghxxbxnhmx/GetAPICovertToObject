@@ -1,52 +1,42 @@
 package com.ok_http.services.impl;
 
-import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Date;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.Properties;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.io.JsonEOFException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ok_http.dto.AllInfoToCpeDTO;
 import com.ok_http.dto.ComparisonPropertiesDTO;
-import com.ok_http.dto.ContractDTO;
 import com.ok_http.dto.DetailComparisonDTO;
-import com.ok_http.dto.InputPropertiesDTO;
-import com.ok_http.dto.MacDTO;
 import com.ok_http.dto.NodeDetailDTO;
+import com.ok_http.enums.ComparisonTypeEnum;
 import com.ok_http.models.ContractModel;
-import com.ok_http.models.DeviceInfoModel;
-import com.ok_http.models.MacContractModel;
 import com.ok_http.models.MergeObjectModel;
 import com.ok_http.models.RootChartModel;
 import com.ok_http.services.GetApiService;
 import com.ok_http.services.MergedObjectModelService;
 import com.ok_http.services.RootChartService;
-import com.ok_http.utils.JsonUtil;
-
-import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.beanutils.PropertyUtils;
+import org.json.JSONObject;
 
 @Service
 public class RootChartServiceImpl implements RootChartService {
     @Autowired
     GetApiService apiService;
-
     @Autowired
     MergedObjectModelService mergedObjectModelService;
 
     ObjectMapper objectMapper = new ObjectMapper();
+
+    private boolean result;
 
     @Override
     public RootChartModel getDataRootChart() {
@@ -59,48 +49,137 @@ public class RootChartServiceImpl implements RootChartService {
             return null;
         }
     }
+
     @Override
     public String process() {
         NodeDetailDTO nodeStart = getNodeStart();
         ArrayList<ComparisonPropertiesDTO> listComparisonPropertiesDTO = nodeStart.getComparisonProperties();
-    
-        ContractModel contractModel = getContractModel();
-        MacDTO macDTO = apiService.getMacFromContract();
-        DeviceInfoModel allInfoToCpeDTO = apiService.getAllInfoToCPE().getData();
-    
-        MergeObjectModel mergeObject = mergedObjectModelService.createMergeObjectModel(contractModel, macDTO, allInfoToCpeDTO);
-        Field[] fieldList = mergeObject.getClass().getDeclaredFields();
-    
-        for (Field field : fieldList) {
-            field.setAccessible(true);
-            try {
-                String fieldPropertyName = getJsonPropertyName(field);
-                Object value = field.get(mergeObject);
-    
-                listComparisonPropertiesDTO.stream()
-                    .flatMap(comparison -> comparison.getProperties().stream())
-                    .filter(property -> fieldPropertyName.equalsIgnoreCase(property.getProperty()))
-                    .forEach(property -> System.out.println(fieldPropertyName + " : " + value + " -|- " + property.getInput()));
-    
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return null;
-    }
-    
+        MergeObjectModel mergeObject = mergedObjectModelService.createMergeObjectModel(
+                getContractModel(),
+                apiService.getMacFromContract(),
+                apiService.getAllInfoToCPE().getData());
+        try {
+            JSONObject mergeObjJson = new JSONObject(objectMapper.writeValueAsString(mergeObject));
+            String conditionMessage = "";
+            for (ComparisonPropertiesDTO comparisonProperty : listComparisonPropertiesDTO) {
+                for (DetailComparisonDTO property : comparisonProperty.getProperties()) {
+                    String valueMergeObjJson = mergeObjJson.optString(property.getProperty(),
+                            null);
+                    boolean overallResult = false;
+                    if (property.getProperty().equalsIgnoreCase("OnStatus") &&
+                            property.getInput().equals("Normal")) {
+                        valueMergeObjJson = "Normal";
+                    }
+                    if (valueMergeObjJson != null) {
+                        if ("number".equals(property.getType())) {
+                            switch (property.getProperty()) {
+                                case "DeviceInfo.UpTime": {
+                                    valueMergeObjJson = parseDurationToMillis(valueMergeObjJson)
+                                            + "";
+                                    break;
+                                }
+                                case "CPUUsage": {
+                                    valueMergeObjJson = valueMergeObjJson.replace("%", "");
+                                    break;
+                                }
+                                case "Memory": {
+                                    valueMergeObjJson = valueMergeObjJson.replace("%", "");
+                                    break;
+                                }
+                            }
+                        }
+                        overallResult = getOverallResult(property.getGate(),
+                                compare(valueMergeObjJson, property.getInput(), property.getType(),
+                                        property.getComparison() + ""));
+                        System.out.println(
+                                valueMergeObjJson + " " +
+                                        ComparisonTypeEnum.getValueByCode(property.getComparison())
+                                        + " "
+                                        + property.getInput() + " - " + overallResult);
+                        setResult(overallResult);
 
-    public void printObjectField(Object object) {
-        Field[] fieldList = object.getClass().getDeclaredFields();
-        for (Field field : fieldList) {
-            field.setAccessible(true);
-            try {
-                Object value = field.get(object);
-                System.out.println(getJsonPropertyName(field) + " :" + value);
-            } catch (IllegalArgumentException | IllegalAccessException e) {
-                e.printStackTrace();
+                    }
+                    if (overallResult) {
+                        conditionMessage = comparisonProperty.getCondition();
+                    }
+                }
+
+            }
+            ;
+            if (getResult()) {
+                return conditionMessage;
+            } else {
+                return "No issues found!";
+            }
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public boolean getResult() {
+        return result;
+    }
+
+    public void setResult(boolean booleanValue) {
+        result = booleanValue;
+    }
+
+    public boolean compare(String value1, String value2, String type, String comparison) {
+        if (type != null) {
+            switch (type) {
+                case "String": {
+                    return handleStringComparison(value1, value2, comparison);
+                }
+                case "number": {
+                    return handleNumberComparison(value1, value2, comparison);
+                }
             }
         }
+        return false;
+    }
+
+    private boolean handleStringComparison(String value1, String value2, String comparison) {
+        switch (comparison) {
+            case "0":
+                return value1.equals(value2);
+            case "1":
+                return !value1.equals(value2);
+        }
+        return false;
+    }
+
+    private boolean handleNumberComparison(String value1, String value2, String comparison) {
+        double numValue1 = Double.parseDouble(value1);
+        double numValue2 = Double.parseDouble(value2);
+
+        switch (comparison) {
+            case "0":
+                return numValue1 == numValue2;
+            case "1":
+                return numValue1 != numValue2;
+            case "2":
+                return numValue1 < numValue2;
+            case "3":
+                return numValue1 <= numValue2;
+            case "4":
+                return numValue1 > numValue2;
+            case "5":
+                return numValue1 >= numValue2;
+        }
+        return false;
+    }
+
+    public static boolean getOverallResult(String gate, boolean booleanValue) {
+        boolean result = booleanValue;
+        if (gate != null) {
+            if (gate.equalsIgnoreCase("and")) {
+                result = result && booleanValue;
+            } else if (gate.equalsIgnoreCase("or")) {
+                result = result || booleanValue;
+            }
+        }
+        return result;
     }
 
     public NodeDetailDTO getNodeStart() {
@@ -133,27 +212,15 @@ public class RootChartServiceImpl implements RootChartService {
                 .findFirst()
                 .orElse(null);
     }
-    // public void addFieldObjectIntoMap(Object javaObject, Map mergedObjectMap) {
-    // for (Field field : javaObject.getClass().getDeclaredFields()) {
-    // field.setAccessible(true);
 
-    // try {
-    // String fieldJsonProperty = field.getAnnotation(JsonProperty.class).value();
-    // Object currentValue = field.get(javaObject);
-    // mergedObjectMap.put(fieldJsonProperty, currentValue);
-    // } catch (IllegalArgumentException | IllegalAccessException e) {
-    // e.printStackTrace();
-    // }
-    // }
-    // }
-
-    public String getJsonPropertyName(Field field) {
-        JsonProperty jsonPropertyAnnotation = field.getAnnotation(JsonProperty.class);
-        if (jsonPropertyAnnotation != null && !jsonPropertyAnnotation.value().isEmpty()) {
-            return jsonPropertyAnnotation.value();
-        } else {
-            return null;
+    public static long parseDurationToMillis(String duration) {
+        try {
+            SimpleDateFormat dateFormatter = new SimpleDateFormat("dd 'days' H'h'mm'm'ss's'");
+            Date date = dateFormatter.parse(duration);
+            return date.getTime();
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return 0;
         }
     }
-
 }
