@@ -65,9 +65,12 @@ public class RootChartServiceImpl implements RootChartService {
             boolean overallResult = true;
 
             for (ComparisonPropertiesDTO comparisonProperty : listComparisonPropertiesDTO) {
+                System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
                 for (DetailComparisonDTO property : comparisonProperty.getProperties()) {
                     String valueMergeObjJson = mergeObjJson.optString(property.getProperty(), null);
-
+                    if ("Code".equals(property.getProperty()) && "40".equals(property.getInput())) {
+                        valueMergeObjJson = "40";
+                    }
                     if (valueMergeObjJson != null) {
                         if ("number".equals(property.getType())) {
                             switch (property.getProperty()) {
@@ -99,11 +102,12 @@ public class RootChartServiceImpl implements RootChartService {
                         }
                     } else {
                         overallResult = false;
-                        break; // If value is null, set overall result to false and exit the loop
+                        System.out.println("\n");
+                        // break;
                     }
                 }
 
-                if (!overallResult) {
+                if (overallResult) {
                     conditionMessage = comparisonProperty.getCondition();
                     break; // Break out of the loop if any property does not satisfy the condition
                 }
