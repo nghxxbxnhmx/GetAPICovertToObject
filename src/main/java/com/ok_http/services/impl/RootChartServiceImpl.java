@@ -25,6 +25,8 @@ import com.ok_http.models.RootChartModel;
 import com.ok_http.services.GetApiService;
 import com.ok_http.services.MergedObjectModelService;
 import com.ok_http.services.RootChartService;
+import com.ok_http.services.TreeBooleanEvaluator;
+
 import org.json.JSONObject;
 
 @Service
@@ -35,7 +37,7 @@ public class RootChartServiceImpl implements RootChartService {
     MergedObjectModelService mergedObjectModelService;
 
     ObjectMapper objectMapper = new ObjectMapper();
-
+    TreeBooleanEvaluator evaluateExpression = new TreeBooleanEvaluator();
     private boolean result;
 
     @Override
@@ -61,13 +63,19 @@ public class RootChartServiceImpl implements RootChartService {
 
         try {
             JSONObject mergeObjJson = new JSONObject(objectMapper.writeValueAsString(mergeObject));
-            String conditionMessage = "";
-            boolean overallResult = true;
-
             for (ComparisonPropertiesDTO comparisonProperty : listComparisonPropertiesDTO) {
                 System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+                String expression = "";
+                boolean overallResult = true;
                 for (DetailComparisonDTO property : comparisonProperty.getProperties()) {
-                    String valueMergeObjJson = mergeObjJson.optString(property.getProperty(), null);
+                    String valueMergeObjJson = null;
+                    if ("number".equals(property.getType())) {
+                        valueMergeObjJson = mergeObjJson.optString(property.getProperty(), "0");
+                    }
+                    // if ("Code".equals(property.getProperty()) &&
+                    // "40".equals(property.getInput())) {
+                    // valueMergeObjJson = property.getInput();
+                    // }
                     if (valueMergeObjJson != null) {
                         switch (property.getProperty()) {
                             case "DeviceInfo.UpTime": {
@@ -81,44 +89,45 @@ public class RootChartServiceImpl implements RootChartService {
                             }
                         }
 
-                        boolean propertyResult = compare(valueMergeObjJson, property.getInput(), property.getType(),
+                        boolean propertyResult = compare(valueMergeObjJson, property.getInput(),
+                                property.getType(),
                                 property.getComparison() + "");
+                        // System.out.println(
+                        // valueMergeObjJson + " " +
+                        // ComparisonTypeEnum.getValueByCode(property.getComparison())
+                        // + " "
+                        // + property.getInput() + " - " + propertyResult);
 
                         System.out.println(
-                                valueMergeObjJson + " " +
-                                        ComparisonTypeEnum.getValueByCode(property.getComparison())
-                                        + " "
-                                        + property.getInput() + " - " + propertyResult);
+                                valueMergeObjJson + " _ "
+                                        + property.getInput() + " - " + property.getType());
 
-                        overallResult = getOverallResult(property.getGate(), propertyResult);
-
-                        if ("and".equalsIgnoreCase(property.getGate()) && !overallResult) {
-                            break;
-                        }
+                        expression = getExpression(propertyResult, property.getGate(), expression);
                     } else {
-                        overallResult = false;
-                        System.out.println(".\n");
+                        expression = "F";
                         break;
                     }
                 }
 
-                if (overallResult) {
-                    conditionMessage = comparisonProperty.getCondition();
-                    break;
-                }
+                overallResult = evaluateExpression.evaluate(expression).equals("T") ? true : false;
+                System.out.println("Expression: " + expression + " - " + overallResult);
+                if (overallResult)
+                    return comparisonProperty.getCondition();
             }
 
-            setResult(overallResult);
-
-            if (getResult()) {
-                return conditionMessage;
-            } else {
-                return "No issues found!";
-            }
+            return "Not found any issues";
         } catch (JsonProcessingException e) {
             e.printStackTrace();
-            return null;
+            return "Error!";
         }
+    }
+
+    public static String getExpression(boolean parameter, String gate, String expression) {
+        String parameterString = parameter ? "T" : "F";
+        parameterString = !parameterString.isBlank() & parameterString != null ? parameterString + " " : "";
+        gate = gate != null ? gate + " " : "";
+        expression = expression + parameterString + gate;
+        return expression;
     }
 
     public boolean getResult() {
@@ -166,18 +175,6 @@ public class RootChartServiceImpl implements RootChartService {
         return false;
     }
 
-    public static boolean getOverallResult(String gate, boolean booleanValue) {
-        boolean result = booleanValue;
-        if (gate != null) {
-            if (gate.equalsIgnoreCase("and")) {
-                result = result && booleanValue;
-            } else if (gate.equalsIgnoreCase("or")) {
-                result = result || booleanValue;
-            }
-        }
-        return result;
-    }
-
     public NodeDetailDTO getNodeStart() {
         try {
             RootChartModel rootChartModel = getDataRootChart();
@@ -213,10 +210,11 @@ public class RootChartServiceImpl implements RootChartService {
         try {
             SimpleDateFormat dateFormatter = new SimpleDateFormat("dd 'days' H'h'mm'm'ss's'");
             Date date = dateFormatter.parse(duration);
-            return date.getTime();
+            return date.getTime() / 1000;
         } catch (ParseException e) {
             e.printStackTrace();
             return 0;
         }
     }
+
 }
