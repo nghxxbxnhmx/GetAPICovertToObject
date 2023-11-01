@@ -1,6 +1,5 @@
 package com.ok_http.models;
 
-import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -71,7 +70,7 @@ public class MergeObjectModel {
     private int branchCode;
 
     @JsonProperty("Suspend_Date")
-    private Date suspendDate;
+    private String suspendDate;
 
     @JsonProperty("Suspend_Reason")
     private String suspendReason;
@@ -258,7 +257,7 @@ public class MergeObjectModel {
 
     @JsonProperty("TraceRouteDiagnostics.DSCP")
     private String traceRouteDiagnosticsDSCP;
-    
+
     @JsonProperty("TraceRouteDiagnostics.MaxHopCount")
     private String traceRouteDiagnosticsMaxHopCount;
 

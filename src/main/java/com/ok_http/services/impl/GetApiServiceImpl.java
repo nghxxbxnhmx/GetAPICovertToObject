@@ -32,15 +32,6 @@ public class GetApiServiceImpl implements GetApiService {
             e.printStackTrace();
             return null;
         }
-
-        // try {
-        // return objectMapper.readValue(new String(
-        // Files.readAllBytes(Paths.get("src\\main\\resources\\static\\store\\GetContractInfoByMac.json")),
-        // StandardCharsets.UTF_8), ContractDTO.class);
-        // } catch (Exception e) {
-        // e.printStackTrace();
-        // return null;
-        // }
     }
 
     @Override
@@ -56,15 +47,6 @@ public class GetApiServiceImpl implements GetApiService {
             e.printStackTrace();
             return null;
         }
-
-        // try {
-        // return objectMapper.readValue(new String(
-        // Files.readAllBytes(Paths.get("src\\main\\resources\\static\\store\\GetMacByContract_ObjID.json")),
-        // StandardCharsets.UTF_8), MacDTO.class);
-        // } catch (Exception e) {
-        // e.printStackTrace();
-        // return null;
-        // }
     }
 
     @Override
@@ -80,14 +62,5 @@ public class GetApiServiceImpl implements GetApiService {
             e.printStackTrace();
             return null;
         }
-
-        // try {
-        // return objectMapper.readValue(new String(
-        // Files.readAllBytes(Paths.get("src\\main\\resources\\static\\store\\getAllInfoToCPE.json")),
-        // StandardCharsets.UTF_8), AllInfoToCpeDTO.class);
-        // } catch (Exception e) {
-        // e.printStackTrace();
-        // return null;
-        // }
     }
 }

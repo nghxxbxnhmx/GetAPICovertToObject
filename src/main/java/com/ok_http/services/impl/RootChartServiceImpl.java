@@ -68,22 +68,16 @@ public class RootChartServiceImpl implements RootChartService {
                 System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
                 for (DetailComparisonDTO property : comparisonProperty.getProperties()) {
                     String valueMergeObjJson = mergeObjJson.optString(property.getProperty(), null);
-                    // if ("Code".equals(property.getProperty()) &&
-                    // "40".equals(property.getInput())) {
-                    // valueMergeObjJson = "40";
-                    // }
                     if (valueMergeObjJson != null) {
-                        if ("number".equals(property.getType())) {
-                            switch (property.getProperty()) {
-                                case "DeviceInfo.UpTime": {
-                                    valueMergeObjJson = parseDurationToMillis(valueMergeObjJson) + "";
-                                    break;
-                                }
-                                case "CPUUsage":
-                                case "Memory": {
-                                    valueMergeObjJson = valueMergeObjJson.replace("%", "");
-                                    break;
-                                }
+                        switch (property.getProperty()) {
+                            case "DeviceInfo.UpTime": {
+                                valueMergeObjJson = parseDurationToMillis(valueMergeObjJson) + "";
+                                break;
+                            }
+                            case "CPUUsage":
+                            case "Memory": {
+                                valueMergeObjJson = valueMergeObjJson.replace("%", "");
+                                break;
                             }
                         }
 
@@ -103,7 +97,7 @@ public class RootChartServiceImpl implements RootChartService {
                         }
                     } else {
                         overallResult = false;
-                        System.out.println("\n");
+                        System.out.println(".\n");
                         break;
                     }
                 }

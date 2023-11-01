@@ -1,7 +1,5 @@
 package com.ok_http.models;
 
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -71,7 +69,7 @@ public class ContractModel {
     int branchCode;
 
     @JsonProperty("Suspend_Date")
-    Date suspendDate;
+    String suspendDate;
 
     @JsonProperty("Suspend_Reason")
     String suspendReason;

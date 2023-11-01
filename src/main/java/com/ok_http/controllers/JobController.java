@@ -42,8 +42,7 @@ public class JobController {
     }
 
     @PostMapping("/GetStartId")
-    public String hehe() {
+    public String getStartId() {
         return rootChartService.process();
     }
-
 }
